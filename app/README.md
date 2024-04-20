@@ -26,9 +26,9 @@ Una vez que los servicios estén en ejecución, la API estará disponible en *ht
 **Crear una transacción**
 POST http://localhost:3000/transactions Envía un JSON con la estructura del objeto CreateTransactionInput para crear una nueva transacción.
 **graphql**
-````json
-   mutation {
-     createTransaction(
+
+  mutation :{
+  createTransaction(
     createTransaction: {
       accountExternalIdDebit: "G",
       accountExternalIdCredit: "G",
@@ -44,6 +44,8 @@ POST http://localhost:3000/transactions Envía un JSON con la estructura del obj
     ,status
   }
 }
+
+
 ```
 **postman**
 ```json
@@ -58,7 +60,7 @@ POST http://localhost:3000/transactions Envía un JSON con la estructura del obj
 **Recuperar una transacción**
 GET http://localhost:3000/transactions/{id} Reemplaza {id} con el identificador único de la transacción que deseas recuperar.
 **graphql**
-```json
+
 query {
   transaction(id: 1){
 transactionExternalId
@@ -72,12 +74,20 @@ transactionExternalId
     createdAt
   }
 }
-```
+
+**Tipos de Transaction**
+TransactionTypes = [
+  { name: 'Deposit' },
+  { name: 'Withdrawal' },
+  { name: 'Transfer' },
+  { name: 'Payment' }
+];
+
 
 **Listar todas las transacciones**
 GET http://localhost:3000/transactions Este punto final devuelve un array con todas las transacciones registradas en el sistema.
 **graphql**
-```json
+
 query{
   transactions{
     transactionExternalId,
@@ -91,7 +101,7 @@ query{
     createdAt
   }
 }
-```
+
 
 # Consideraciones
 

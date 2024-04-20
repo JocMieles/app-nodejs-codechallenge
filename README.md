@@ -159,6 +159,14 @@ transactionExternalId
   }
 }
 
+**Tipos de Transaction**
+TransactionTypes = [
+  { name: 'Deposit' },
+  { name: 'Withdrawal' },
+  { name: 'Transfer' },
+  { name: 'Payment' }
+];
+
 
 **Listar todas las transacciones**
 GET http://localhost:3000/transactions Este punto final devuelve un array con todas las transacciones registradas en el sistema.
