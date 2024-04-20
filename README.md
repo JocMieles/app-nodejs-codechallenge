@@ -129,8 +129,6 @@ POST http://localhost:3000/transactions Envía un JSON con la estructura del obj
   }
 }
 
-```
-
 **postman**
 
 ```json
